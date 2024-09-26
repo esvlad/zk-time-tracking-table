@@ -1,14 +1,10 @@
 <?php
 require "vendor/autoload.php";
 
-use MiladRahimi\PhpRouter\Router;
-use Esvlad\ZkTimeTrackingTable\Controllers\Form;
+use Dotenv\Dotenv;
 
-$router = Router::create();
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
-$router->get('/' [Form::class, 'index']);
-$router->post('/' [Form::class, 'handler']);
-$router->get('/success' [Form::class, 'success']);
-$router->get('/fail' [Form::class, 'fail']);
-
-$router->dispatch();
+require "debug.php";
+require "routers.php";

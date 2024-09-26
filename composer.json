@@ -2,7 +2,7 @@
     "name": "esvlad/zk-time-tracking-table",
     "autoload": {
         "psr-4": {
-            "Esvlad\\ZkTimeTrackingTable\\": "src/"
+            "Esvlad\\ZkTimeTrackingTable\\": "app/"
         }
     },
     "authors": [
@@ -11,8 +11,9 @@
         }
     ],
     "require": {
-        "illuminate/database": "^10.48",
         "miladrahimi/phprouter": "5.*",
-        "phpoffice/phpspreadsheet": "^2.2"
+        "phpoffice/phpspreadsheet": "^2.2",
+        "illuminate/http": "^10.48",
+        "vlucas/phpdotenv": "^5.6"
     }
 }

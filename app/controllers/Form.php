@@ -8,12 +8,12 @@ use PhpOffice\PhpSpreadsheet\Reader\IReadFilter;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 class Form extends Controller{
-	public function index($month = 9){
+	public function index($month = 11){
 		//$req = $this->request->all();
 		$table = new Table();
 
 		$inputFileType = 'Xls';
-		$inputFileName = storage('uploads/test') . '11_report.xls';
+		$inputFileName = storage('uploads') . '1_report.xls';
 		$sheetname = 'Записи счит. карты';
 
 		$reader = IOFactory::createReader($inputFileType);

@@ -9,8 +9,15 @@ class Table{
 
 		$hours = str_split($hours_cell, 5);
 
-		$start = strtotime(current($hours));
-		$end = strtotime(array_pop($hours));
+		$start = current($hours);
+		$end = array_pop($hours);
+
+		if($su != true && ($start < '09:00')){
+			$start = '09:00';
+		}
+
+		$start = strtotime($start);
+		$end = strtotime($end);
 
 		$time = ($end - $start) / 60 / 60 - .5;
 		$time = round($time, 1);
@@ -21,7 +28,7 @@ class Table{
 
 		if($time < 0) $time = 0;
 
-		return $time;
+		return $this->roundToHalf($time);
 	}
 
 	public function monthName($m = 1){
@@ -29,5 +36,9 @@ class Table{
 		$month =['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
 
 		return $month[$m];
+	}
+
+	public function roundToHalf($num) {
+		return round($num * 2) / 2;
 	}
 }
